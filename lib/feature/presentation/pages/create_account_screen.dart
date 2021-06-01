@@ -66,8 +66,9 @@ class CreateAccountScreen extends StatelessWidget {
                     Column(
                       children: [
                         BigTextFieldWidget(
+                          labelText: S.of(context).phone_number,
                           textInputType: TextInputType.phone,
-                          hintText: S.of(context).phone_number,
+                          hintText: S.of(context).enter_phone_number,
                           iconAssets: 'assets/icons/icon_phone.png',
                           onPressedIcon: () {},
                           onChanged: (value) => context.read<LoginBloc>().add(
@@ -78,8 +79,9 @@ class CreateAccountScreen extends StatelessWidget {
                           height: 2.h,
                         ),
                         BigTextFieldWidget(
+                          labelText:S.of(context).password,
                           obscureText: true,
-                          hintText: S.of(context).password,
+                          hintText: S.of(context).enter_password,
                           iconAssets: 'assets/icons/lock_gray.png',
                           onPressedIcon: () => print('dsgsdgsd'),
                         ),
@@ -87,8 +89,9 @@ class CreateAccountScreen extends StatelessWidget {
                           height: 2.h,
                         ),
                         BigTextFieldWidget(
+                          labelText:S.of(context).confirm_password,
                           obscureText: true,
-                          hintText: S.of(context).confirm_password,
+                          hintText: S.of(context).enter_password,
                           iconAssets: 'assets/icons/lock_gray.png',
                           onPressedIcon: () {},
                         ),

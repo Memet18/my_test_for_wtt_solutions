@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 
 class LittleTextFieldWidget extends StatelessWidget {
   final String hintText;
+  final String labelText;
   final String iconAssets;
   final bool obscureText;
   final bool validator;
@@ -16,6 +17,7 @@ class LittleTextFieldWidget extends StatelessWidget {
     @required this.hintText,
     @required this.iconAssets,
     @required this.onPressedIcon,
+    @required this.labelText,
     this.obscureText = false,
     this.onChanged,
     this.validator,
@@ -27,9 +29,6 @@ class LittleTextFieldWidget extends StatelessWidget {
     return Container(
       width: 78.w,
       height: 5.5.h,
-      decoration: BoxDecoration(
-          color: AppColors.textFieldBgColorGrey,
-          borderRadius: BorderRadius.circular(3.h)),
       child: TextFormField(
         onChanged: (value) {
           onChanged(value);
@@ -40,6 +39,12 @@ class LittleTextFieldWidget extends StatelessWidget {
             color: AppColors.colorBlack),
         obscureText: obscureText,
         decoration: InputDecoration(
+          filled: true,
+            fillColor: AppColors.textFieldBgColorGrey,
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color:AppColors.textFieldBgColorGrey),
+              borderRadius: BorderRadius.circular(3.h),
+            ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(3.h),
             ),
@@ -50,6 +55,11 @@ class LittleTextFieldWidget extends StatelessWidget {
                   onPressedIcon();
                 },
                 icon: Container(height: 3.h, child: Image.asset(iconAssets))),
+            labelText: labelText ,
+            labelStyle: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 2.3.h,
+                color: AppColors.textFieldTextColor),
             hintText: hintText,
             hintStyle:
                 TextStyle(color: AppColors.textFieldTextColor, fontSize: 2.h)),

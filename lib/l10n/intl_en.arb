@@ -20,5 +20,8 @@
   "next": "NEXT",
   "or": "Or",
   "click_here": "Click here",
-  "email_not_valid": "Email is not valid"
+  "email_not_valid": "Email is not valid",
+  "enter_password": "Enter password",
+  "enter_email": "Enter email",
+  "enter_phone_number": "Enter phone number"
 }

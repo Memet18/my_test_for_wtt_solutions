@@ -317,7 +317,8 @@ class LoginScreen extends StatelessWidget {
   Widget _emailField(BuildContext context1) {
     return BlocBuilder<LoginBloc, LoginState>(
       builder: (BuildContext context, state) => LittleTextFieldWidget(
-        hintText: S.of(context1).email,
+        labelText:S.of(context1).email,
+        hintText: S.of(context1).enter_email,
         iconAssets: 'assets/icons/icon_email.png',
         textValidator: state.isValidUsername ? null : 'Email is too short',
         onChanged: (value) => context.read<LoginBloc>().add(
@@ -331,7 +332,8 @@ class LoginScreen extends StatelessWidget {
   Widget _passwordField(BuildContext context1) {
     return BlocBuilder<LoginBloc, LoginState>(
       builder: (BuildContext context, state) => LittleTextFieldWidget(
-        hintText: S.of(context1).password,
+        labelText:S.of(context1).password,
+        hintText: S.of(context1).enter_password,
         iconAssets: 'assets/icons/icon_lock.png',
         obscureText: true,
         textValidator: state.isValidUsername ? null : 'Password is too short',
